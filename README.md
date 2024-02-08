@@ -1,7 +1,8 @@
+<header>
 # quizz-NLW
-Quizz desenvolvido para a Next Level Week, na RocketSeat 
+Quizz desenvolvido para a Next Level Week, na RocketSeat</header><br>
 
-Tecnologias utilizadas:
-JavaScript
-HTML
-CSS
+<h1>Tecnologias utilizadas:</h1><br>
+<p>JavaScript</p><br>
+<p> HTML </p><br>
+<p> CSS </p><br>

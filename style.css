@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* reset do CSS, ou seja, retirar todas margens, paddings e etc para visualizar com mais clareza o que precisa ser feito.*/
+*, :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Inter', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+}
+
+body {
+  background-color: #0F172A;
+}
+
+header {
+  margin-top: 64px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #334155;
+}
+
+header h1 {
+  margin-top: 24px;
+  font-size: 30px;
+  color: #f1f5f9;
+}
+
+#quiz {
+  counter-reset: quiz-item;
+
+}
+
+.quiz-item {
+  margin-top: 24px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+
+  overflow: hidden;
+/* quando o filho tenta transbordar o preenchimento da borda, do bg, usar o overflow para esconder as parte onde ele saiu da box além do esperado;*/
+
+  color: #e2e8f0;
+}
+
+.quiz-item h3 {
+  padding: 16px 20px;
+  color: #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background-color: #1e2938;
+
+}
+
+.quiz-item h3:before {
+  counter-increment: quiz-item;
+  content: counter(quiz-item);
+
+  background-color: #475569;
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 12px;
+  border-radius: 50%;
+  flex-shrink: 0; /*para não acontecer encolhimento dos círculos quando varia a largura da página*/
+
+}
+
+.quiz-item dl {
+  padding: 20px 24px;
+  display: grid; /*se o display não estover como grid, o gap não será aplicado. */ 
+  gap: 8px;
+}
+
+.quiz-item dl dt {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #e2e3f0;
+
+}
+
+input {
+  all: unset;
+  border: 1px solid #94a3b8;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:checked {  /*o que acontece quando clica no input*/
+  border: 1px solid #A3E635;
+}
+
+input:checked:before {
+  content: ""; /* deixando o espaço vazio é o que faz ser possível colocar outras propriedades nesse input*/
+  width: 10px;
+  height: 10px;
+
+  background-color: #A3E635;
+  border-radius: 50%;
+
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto 64px;
+  padding: 20px;
+}
+
+
+#acertos {
+  text-align: center;
+  background-color: #A3E635;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  
+  padding: 12px;
+  width: 100%;
+}
